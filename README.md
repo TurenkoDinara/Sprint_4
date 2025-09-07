@@ -73,7 +73,7 @@ pytest --cov=main --cov-report=term-missing
 ---------- coverage: platform win32, python 3.13.5-final-0 ----------
 Name         Stmts   Miss  Cover
 --------------------------------
-tests.py        63      0   100%
+test.py        63      0   100%
 --------------------------------
 TOTAL           63      0   100%
 ```
