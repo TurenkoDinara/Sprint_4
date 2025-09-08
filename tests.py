@@ -50,8 +50,7 @@ class TestBooksCollector:
     # 6) позитивная проверка на метод set_book_genre
 
     def test_get_book_genre_correct_genre_by_book_title(self, collection):
-        collection.add_new_book('Горе от ума')
-        collection.set_book_genre('Горе от ума', 'Комедии')  # присвоили жанр по-другому, через доступ к словарю
+        collection.books_genre = {'Горе от ума': 'Комедии'}
         assert collection.get_book_genre('Горе от ума') == 'Комедии'
 
     # 7) позитивная проверка на метод get_books_with_specific_genre
@@ -90,11 +89,9 @@ class TestBooksCollector:
 
     # 10) негативная проверка на метод get_books_for_children
 
-    def test_get_books_for_children_unsuccessful(self, collection):
-        collection.books_genre = {
-            'Оно': 'Ужасы',
-            'Шерлок Холмс': 'Детективы'
-        }
+    def test_get_books_for_children_when_book_has_no_genre(self, collection)
+        # проверяем, что книга без жанра не возвращается
+        collection.add_new_book('Шерлок Хомс')
         assert collection.get_books_for_children() == []
 
     # 11) позитивная проверка на метод add_book_in_favorites
