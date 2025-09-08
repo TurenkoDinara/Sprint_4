@@ -89,7 +89,7 @@ class TestBooksCollector:
 
     # 10) негативная проверка на метод get_books_for_children
 
-    def test_get_books_for_children_when_book_has_no_genre(self, collection)
+    def test_get_books_for_children_when_book_has_no_genre(self, collection):
         # проверяем, что книга без жанра не возвращается
         collection.add_new_book('Шерлок Хомс')
         assert collection.get_books_for_children() == []
